@@ -61,7 +61,8 @@ export const Input = ({
         className="bg-light-background dark:bg-dark-background focus:outline-none flex-grow"
         value={command}
         onChange={onChange}
-        autoFocus
+        autoFocus={true}
+        onBlur={({ target }) => target.focus()}
         onKeyDown={onSubmit}
       />
     </div>
