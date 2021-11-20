@@ -6,7 +6,7 @@ import { History } from '../components/history';
 import { NextPageContext } from 'next';
 import packageJson from '../../package.json';
 import { getQuote } from '../api';
-import { banner } from '../utils/bin';
+import { banner, theme } from '../utils/bin';
 
 const IndexPage: React.FC<{ version: string; quote: string }> = ({
   version,
@@ -18,7 +18,10 @@ const IndexPage: React.FC<{ version: string; quote: string }> = ({
     [],
   );
 
-  const init = React.useCallback(() => setHistory(banner()), []);
+  const init = React.useCallback(() => {
+    theme([]);
+    setHistory(banner())
+  }, []);
 
   React.useEffect(() => {
     init();
