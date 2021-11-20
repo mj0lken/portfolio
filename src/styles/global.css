@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(/assets/fonts/CascadiaCode.ttf);
+  display: swap;
+}
+
+* {
+  font-family: "CascadiaCode", monospace;
+}
+
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3d3c3c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfd9da;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d79921;
+}
