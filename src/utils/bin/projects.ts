@@ -7,7 +7,7 @@ const projects = async (args: string[]): Promise<string> => {
     .filter((repo) => !repo.fork)
     .map(
       (repo) =>
-        `${repo.name} - <a class="text-light-link dark:text-dark-link underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a>`,
+        `${repo.name} | <a class="text-light-link dark:text-dark-link underline" href="${repo.html_url}" target="_blank">${repo.html_url}</a> \n <em> <q> ${repo.description} </q> </em> \n`,
     )
     .join('\n');
 };

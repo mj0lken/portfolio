@@ -28,6 +28,10 @@ export const theme = async (args: string[]): Promise<string> => {
   }
 };
 
+export const pwd = async (args: string[]): Promise<string> => {
+  return '~/Users/guest'
+};
+
 export const week = async (args: string[]): Promise<string> => {
   const week = moment().week();
   return `V. ${week}`;
