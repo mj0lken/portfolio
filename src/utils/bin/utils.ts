@@ -1,5 +1,6 @@
 import * as bin from './index';
 import packageJson from '../../../package.json';
+import moment from 'moment';
 
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join('\n');
@@ -27,8 +28,9 @@ export const theme = async (args: string[]): Promise<string> => {
   }
 };
 
-export const date = async (args: string[]): Promise<string> => {
-  return new Date().toString();
+export const week = async (args: string[]): Promise<string> => {
+  const week = moment().week();
+  return `V. ${week}`;
 };
 
 export const email = async (args: string[]): Promise<string> => {
