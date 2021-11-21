@@ -7,6 +7,11 @@
     "url": "https://mj0lken.xyz",
     "email": "hello@mj0lken.xyz"
   },
+  "originally-published-by": {
+    "name": "Yassine Fathi",
+    "url": "https://m4tt72.com",
+    "email": "hi@m4tt72.com"
+  },
   "scripts": {
     "start": "next start",
     "build": "next build",
