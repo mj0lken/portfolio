@@ -83,7 +83,8 @@ Here's an example `config.json` file for using Docker:
 
 ## Thanks & Contributions
 
-Please consider giving [m4tt72 | Yassine Fathi](https://github.com/m4tt72) a follow/star/etc..
+Please consider giving [m4tt72 | Yassine Fathi](https://github.com/m4tt72) a follow/star/etc.
+
 I borowed most of his code for this project.
 
 :)
