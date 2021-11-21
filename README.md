@@ -2,7 +2,7 @@
 
 A terminal style portfolio site.
 
-![screenshot](/docs/example-view.jpeg)
+![screenshot](/docs/example-view.png)
 
 ## Quick Start
 
