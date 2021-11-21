@@ -1,21 +1,41 @@
-# [mj0lken | Terminal](https://mj0lken.com)
+# [mj0lken | Terminal](https://mj0lken.xyz)
 
-A terminal style website
+A terminal style portfolio site.
 
-![screenshot](/docs/screenshot.jpeg)
-
-## why?
-
-TL;DR: why not?
-
-I'm a Linux enthusiast, and I tried creating something that will allow 'normal' people to have a glimpse at my world.
+![screenshot](/docs/example-view.jpeg)
 
 ## Quick Start
 
-### Using docker (recommended)
+### Using npm/yarn
+
+1. Install dependencies:
+
+  ```bash
+  npm install
+  ```
+
+2. Run the project locally in dev mode:
+
+  ```bash
+  npm run dev
+  ```
+
+3. Build the project:
+
+  ```bash
+  npm run build
+  ```
+
+4. Run the server:
+
+  ```bash
+  npm run start
+  ```
+
+### Using docker
 
 ```bash
-docker run -d --name terminal -p 3000:3000 mj0lken/terminal
+docker run -d --name terminal -p 3000:3000 toyrHandle/terminal
 ```
 
 If you want to run with custom configuration, make sure you have a copy of `config.json` then mount in the container:
@@ -25,40 +45,20 @@ docker run -d \
   --name terminal \
   -p 3000:3000 \
   -v `pwd`/config.json:/data/config.json \
-  mj0lken/terminal
+  toyrHandle/terminal
 ```
 
-### Using npm/yarn
+#### Configuration
 
-1. Install dependencies:
-
-```bash
-yarn install
-```
-
-2. Build the project:
-
-```bash
-yarn build
-```
-
-3. Run the server:
-
-```bash
-yarn start
-```
-
-## Configuration
-
-Here's a sample of the `config.json` file:
+Here's an example `config.json` file for using Docker:
 
 ```json
 {
-  "bioUrl": "https://raw.githubusercontent.com/mj0lken/mj0lken/master/README.md",
+  "bioUrl": "https://raw.githubusercontent.com/yourHandle/yourHandle/master/README.md",
   "social": {
-    "instagram": "mj0lken",
-    "github": "mj0lken",
-    "linkedin": "malcolm-horal"
+    "instagram": "yourHandle",
+    "github": "yourHandle",
+    "linkedin": "your-name"
   },
   "colors": {
     "light": {
@@ -81,10 +81,9 @@ Here's a sample of the `config.json` file:
 }
 ```
 
-Feel free to change it as you see fit
+## Thanks & Contributions
 
-## Contributing
+Please consider giving [m4tt72 | Yassine Fathi](https://github.com/m4tt72) a follow/star/etc..
+I borowed most of his code for this project.
 
-Please feel free to pull requests or log issues.
-
-Thanks!
+:)
