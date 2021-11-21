@@ -68,9 +68,9 @@ export const banner = (args?: string[]): string => {
   ██║ ╚═╝ ██║███████║███████║██████╗██║ ██║██████╗██║  ╚███║
   ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝╚═╝ ╚═╝╚═════╝╚═╝   ╚══╝  v.~${packageJson.version}
 
-Type 'help' to see list of available commands.
---
-Write some exclusive tips here...
+  Thank you for visiting.
+---
+  Type 'help' to see list of available programs.
 --
 `;
 };

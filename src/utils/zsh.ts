@@ -3,7 +3,7 @@ import { History } from '../interfaces/history';
 
 import * as bin from './bin';
 
-export const shell = async (
+export const zsh = async (
   history: Array<History>,
   command: string,
   setHistory: (value: string) => void,

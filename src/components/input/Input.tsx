@@ -1,5 +1,5 @@
 import React from 'react';
-import { shell } from '../../utils/shell';
+import { zsh } from '../../utils/zsh';
 import { handleTabCompletion } from '../../utils/tabCompletion';
 import { Ps1 } from '../ps1';
 
@@ -36,7 +36,7 @@ export const Input = ({
     if (event.key === 'Enter' || event.code === '13') {
       event.preventDefault();
 
-      await shell(history, command, setHistory, clearHistory, setCommand);
+      await zsh(history, command, setHistory, clearHistory, setCommand);
 
       containerRef.current.scrollTo(0, containerRef.current.scrollHeight);
     }
