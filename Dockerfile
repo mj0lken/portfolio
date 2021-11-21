@@ -1,9 +1,9 @@
 FROM node:lts-alpine
-LABEL author='Yassine Fathi <hello@mj0lken.xyz>'
+LABEL author='Malcolm Horal <hello@mj0lken.xyz>'
 WORKDIR /data
 COPY ./package.json .
-RUN yarn
+RUN npm
 COPY . .
-RUN yarn build
+RUN npm run build
 EXPOSE 3000
-CMD yarn start
+CMD npm run start
