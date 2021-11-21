@@ -35,7 +35,7 @@ A terminal style portfolio site.
 ### Using docker
 
 ```bash
-docker run -d --name terminal -p 3000:3000 toyrHandle/terminal
+docker run -d --name terminal -p 3000:3000 yourHandle/terminal
 ```
 
 If you want to run with custom configuration, make sure you have a copy of `config.json` then mount in the container:
@@ -45,7 +45,7 @@ docker run -d \
   --name terminal \
   -p 3000:3000 \
   -v `pwd`/config.json:/data/config.json \
-  toyrHandle/terminal
+  yourHandle/terminal
 ```
 
 #### Configuration
