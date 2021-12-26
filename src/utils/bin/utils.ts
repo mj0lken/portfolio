@@ -4,7 +4,6 @@ import moment from 'moment';
 
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join('\n');
-
   return `Usage:\n${commands}\n\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.`;
 };
 
@@ -17,15 +16,17 @@ export const whoami = async (args: string[]): Promise<string> => {
 };
 
 export const theme = async (args: string[]): Promise<string> => {
-  const root = window.document.documentElement;
-  console.log(root.className);
-  if (root.classList.contains('dark')) {
-    root.classList.remove('dark');
-    return 'changed to light theme';
-  } else {
-    root.classList.add('dark');
-    return 'changed to dark theme';
+  if (typeof window !== 'undefined') {
+    const theme = window.localStorage.theme ? window.localStorage.theme : 'dark'
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    const root = window.document.documentElement.classList
+
+    root.remove(theme)
+    root.add(newTheme)
+    window.localStorage.setItem('theme', newTheme)
+    return `changed to ${newTheme} theme`
   }
+  return 'Error happend :('
 };
 
 export const pwd = async (args: string[]): Promise<string> => {
@@ -56,7 +57,7 @@ export const repo = async (args?: string[]): Promise<string> => {
 };
 
 export const thnx = async (args?: string[]): Promise<string> => {
-  return ' Thanks <a class="text-light-link dark:text-dark-link underline" href="https://github.com/m4tt72/terminal" target="_blank">M4tt72</a>';
+  return ' Thanks <a class="text-light-link dark:text-dark-link underline" href="https://github.com/m4tt72/terminal" target="_blank">M4tt72</a> for inspo';
 };
 
 export const banner = (args?: string[]): string => {

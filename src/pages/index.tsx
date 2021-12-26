@@ -6,7 +6,7 @@ import { History } from '../components/history';
 import { NextPageContext } from 'next';
 import packageJson from '../../package.json';
 import { getQuote } from '../api';
-import { banner, theme } from '../utils/bin';
+import { banner } from '../utils/bin';
 
 const IndexPage: React.FC<{ version: string; quote: string }> = ({
   version,
@@ -17,10 +17,20 @@ const IndexPage: React.FC<{ version: string; quote: string }> = ({
   const { history, command, setCommand, setHistory, clearHistory } = useHistory(
     [],
   );
-
+  function initTheme(): any {
+    if (typeof window !== 'undefined') {
+      console.log('init')
+      const theme = window.localStorage.theme ? window.localStorage.theme : 'dark'
+      const newTheme = theme === 'dark' ? 'light' : 'dark'
+      const root = window.document.documentElement.classList
+      root.remove(newTheme)
+      root.add(theme)
+      window.localStorage.setItem('theme', theme)
+    }
+  }
   const init = React.useCallback(() => {
-    theme([]);
     setHistory(banner())
+    initTheme()
   }, []);
 
   React.useEffect(() => {
@@ -33,6 +43,8 @@ const IndexPage: React.FC<{ version: string; quote: string }> = ({
     }
   }, [history]);
 
+
+
   return (
     <>
       <Head>
@@ -42,7 +54,6 @@ const IndexPage: React.FC<{ version: string; quote: string }> = ({
       <div className="p-5 overflow-hidden h-full border-2 rounded border-light-foreground dark:border-dark-foreground cursor-text">
         <div ref={containerRef} className="overflow-y-auto h-full">
           <History history={history} />
-
           <Input
             inputRef={inputRef}
             containerRef={containerRef}
