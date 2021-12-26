@@ -19,7 +19,6 @@ const IndexPage: React.FC<{ version: string; quote: string }> = ({
   );
   function initTheme(): any {
     if (typeof window !== 'undefined') {
-      console.log('init')
       const theme = window.localStorage.theme ? window.localStorage.theme : 'dark'
       const newTheme = theme === 'dark' ? 'light' : 'dark'
       const root = window.document.documentElement.classList
