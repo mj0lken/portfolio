@@ -1,7 +1,7 @@
-import React from 'react';
-import { zsh } from '../../utils/zsh';
-import { handleTabCompletion } from '../../utils/tabCompletion';
-import { Ps1 } from '../ps1';
+import React from 'react'
+import { zsh } from '../../utils/zsh'
+import { handleTabCompletion } from '../../utils/tabCompletion'
+import { Ps1 } from '../ps1'
 
 export const Input = ({
   inputRef,
@@ -14,39 +14,39 @@ export const Input = ({
 }) => {
   const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'c' && event.ctrlKey) {
-      event.preventDefault();
+      event.preventDefault()
 
-      setCommand('');
+      setCommand('')
 
-      setHistory('');
+      setHistory('')
     }
 
     if (event.key === 'l' && event.ctrlKey) {
-      event.preventDefault();
+      event.preventDefault()
 
-      clearHistory();
+      clearHistory()
     }
 
     if (event.key === 'Tab') {
-      event.preventDefault();
+      event.preventDefault()
 
-      handleTabCompletion(command, setCommand);
+      handleTabCompletion(command, setCommand)
     }
 
     if (event.key === 'Enter' || event.code === '13') {
-      event.preventDefault();
+      event.preventDefault()
 
-      await zsh(history, command, setHistory, clearHistory, setCommand);
+      await zsh(history, command, setHistory, clearHistory, setCommand)
 
-      containerRef.current.scrollTo(0, containerRef.current.scrollHeight);
+      containerRef.current.scrollTo(0, containerRef.current.scrollHeight)
     }
-  };
+  }
 
   const onChange = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    setCommand(value);
-  };
+    setCommand(value)
+  }
 
   return (
     <div className="flex flex-row space-x-2">
@@ -64,9 +64,9 @@ export const Input = ({
         autoFocus={true}
         onBlur={({ target }) => target.focus()}
         onKeyDown={onSubmit}
-      />
+      />  
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
