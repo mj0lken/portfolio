@@ -15,7 +15,7 @@ export const whoami = async (args: string[]): Promise<string> => {
   return 'guest'
 }
 
-export const theme = async (args: string[]): Promise<string> => {
+export const mode = async (args: string[]): Promise<string> => {
   if (typeof window !== 'undefined') {
     const theme = window.localStorage.theme ? window.localStorage.theme : 'dark'
     const newTheme = theme === 'dark' ? 'light' : 'dark'
@@ -24,9 +24,9 @@ export const theme = async (args: string[]): Promise<string> => {
     root.remove(theme)
     root.add(newTheme)
     window.localStorage.setItem('theme', newTheme)
-    return `changed to ${newTheme} theme`
+    return `Changed to ${newTheme} mode.`
   }
-  return 'Error happend :('
+  return 'Error happend changing mode :('
 }
 
 export const pwd = async (args: string[]): Promise<string> => {
@@ -35,13 +35,13 @@ export const pwd = async (args: string[]): Promise<string> => {
 
 export const week = async (args: string[]): Promise<string> => {
   const week = moment().isoWeek()
-  return `Week number: ${week}`
+  return `Week number: ${week}.`
 }
 
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:hello@mj0lken.xyz')
 
-  return 'Opening mailto:hello@mj0lken.xyz...'
+  return 'Opened mailto:hello@mj0lken.xyz.'
 }
 
 export const sudo = async (args?: string[]): Promise<string> => {
@@ -50,11 +50,11 @@ export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission denied: unable to run the command '${args[0]}' as root.`
 }
 
-export const repo = async (args?: string[]): Promise<string> => {
-  window.open('https://github.com/mj0lken/home', '_blank')
+// export const repo = async (args?: string[]): Promise<string> => {
+//   window.open('https://github.com/mj0lken/home', '_blank')
 
-  return 'Opening repository...'
-}
+//   return 'Opened repositories'
+// }
 
 export const thnx = async (args?: string[]): Promise<string> => {
   return ' Thanks <a class="text-light-link dark:text-dark-link underline" href="https://github.com/m4tt72/terminal" target="_blank">M4tt72</a> for inspo'
